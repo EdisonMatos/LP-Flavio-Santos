@@ -44,7 +44,7 @@ const currentYear = new Date().getFullYear();
 export const infos = {
   name: "Dr Flávio Ferreira",
   email: "contato", // Email desejado pelo cliente
-  domain: "ferreirasantosadv.com.br", // Sem "www"
+  domain: "advogadoferreirasantos.com.br", // Sem "www"
   phone: {
     ddd: "14",
     firstPart: "99769", // Apenas os 5 primeiros números (incluindo o 9)
