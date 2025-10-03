@@ -14,10 +14,14 @@ import SectionHeader from "../sectionElements/SectionHeader";
 import imgPoints from "../../assets/imgs/about/points.png";
 import AboutFading from "../sectionElements/AboutFading";
 import SectionShapeDiv from "../sectionElements/SectionShapeDiv";
-import { MoveRight } from "lucide-react";
+import { Link, MoveRight } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { Navigate } from "react-router-dom";
 
 const whatsappContactLink = `${content.texts.links.ctaWhatsapp}`;
+const navigate = (link) => {
+  window.open(link, "_blank");
+};
 
 export default function About({ modal }) {
   const [visible, setVisible] = useState(false);
@@ -35,7 +39,9 @@ export default function About({ modal }) {
           <Button
             aria-label={content.texts.about.ctaButtonAriaLabel}
             label={content.texts.about.ctaButtonText}
-            buttonLink={whatsappContactLink}
+            onClick={() => {
+              navigate("/contato");
+            }}
             animation={false}
             className="hover:scale-105"
             icon={<FaWhatsapp size={24} />}

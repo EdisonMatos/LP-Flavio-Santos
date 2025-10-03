@@ -2,8 +2,12 @@ import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 import content from "../../content/content";
 import Button from "../interactives/Button";
 import { FaWhatsapp } from "react-icons/fa";
+import { Navigate } from "react-router-dom";
 
 const whatsappContactLink = `${content.texts.links.ctaWhatsapp}`;
+const navigate = (link) => {
+  window.open(link, "_blank");
+};
 
 export default function Hero() {
   return (
@@ -40,7 +44,9 @@ export default function Hero() {
                   <Button
                     aria-label={content.texts.hero.ctaButtonAriaLabel}
                     label={content.texts.hero.ctaButtonText}
-                    buttonLink={whatsappContactLink}
+                    onClick={() => {
+                      navigate("/contato");
+                    }}
                     animation
                     className="w-[100%]"
                     icon={<FaWhatsapp size={24} />}

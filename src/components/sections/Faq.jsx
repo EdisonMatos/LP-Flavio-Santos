@@ -6,7 +6,11 @@ import SectionWrapper from "../sectionElements/SectionWrapper";
 import AccordionExpandDefault from "../interactives/AcordionTwo";
 import content from "../../content/content";
 import SectionShapeDiv from "../sectionElements/SectionShapeDiv";
+import { Navigate } from "react-router-dom";
 
+const navigate = (link) => {
+  window.open(link, "_blank");
+};
 export default function Faq() {
   return (
     <div className="">
@@ -31,7 +35,7 @@ export default function Faq() {
           </MotionDivDownToUp>
           <MotionDivDownToUp>
             <Paragraphs className="text-center underline transition text-secondary hover:scale-110">
-              <a href={content.texts.links.ctaWhatsapp} target="_blank">
+              <a onClick={() => navigate("/contato")} target="_blank">
                 {content.texts.faq.paragraph}
               </a>
             </Paragraphs>

@@ -5,8 +5,12 @@ import SectionWrapper from "../sectionElements/SectionWrapper";
 import content from "../../content/content";
 import SectionShapeDiv from "../sectionElements/SectionShapeDiv";
 import { FaWhatsapp } from "react-icons/fa";
+import { Navigate } from "react-router-dom";
 
 const whatsappContactLink = `${content.texts.links.ctaWhatsapp}`;
+const navigate = (link) => {
+  window.open(link, "_blank");
+};
 
 export default function Cta() {
   return (
@@ -28,7 +32,9 @@ export default function Cta() {
           <Button
             aria-label={content.texts.hero.ctaButtonAriaLabel}
             label={content.texts.cta.ctaButtonText}
-            buttonLink={whatsappContactLink}
+            onClick={() => {
+              navigate("/contato");
+            }}
             animation
             icon={<FaWhatsapp size={24} />}
           />

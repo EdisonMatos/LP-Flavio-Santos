@@ -3,8 +3,13 @@ import content from "../../content/content";
 import { useState, useEffect } from "react";
 import IconButton from "../interactives/IconButton";
 import Button from "../interactives/Button";
+import { Navigate } from "react-router-dom";
 
 const whatsappContactLink = `${content.texts.links.ctaWhatsapp}`;
+
+const navigate = (link) => {
+  window.open(link, "_blank");
+};
 
 export default function ListGroupSocial({ LightMode }) {
   const [scrolling, setScrolling] = useState(false);
@@ -195,7 +200,9 @@ export default function ListGroupSocial({ LightMode }) {
           <Button
             aria-label={content.texts.hero.ctaButtonAriaLabel}
             label="Contato"
-            buttonLink={whatsappContactLink}
+            onClick={() => {
+              navigate("/contato");
+            }}
             className={`${scrolling ? "" : ""}`}
             textclassName="text-paragraph3"
             size="small"

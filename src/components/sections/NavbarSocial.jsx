@@ -6,10 +6,11 @@ import SidebarSocial from "../sectionElements/SidebarSocial";
 import content from "../../content/content";
 import Button from "../interactives/Button";
 import { FaWhatsapp } from "react-icons/fa";
+import { Navigate } from "react-router-dom";
 
 const whatsappContactLink = `${content.texts.links.ctaWhatsapp}`;
 
-export default function  NavbarSocial({ LightMode }) {
+export default function NavbarSocial({ LightMode }) {
   const [scrolling, setScrolling] = useState(false);
   const [showListGroup, setShowListGroup] = useState(true);
   const [showSidebar, setShowSidebar] = useState(false);
@@ -35,7 +36,7 @@ export default function  NavbarSocial({ LightMode }) {
         setTimeout(() => {
           setShowSidebar(false);
           setIsAnimating(false);
-        }, 950); 
+        }, 950);
       } else {
         setShowSidebar(true);
         setTimeout(() => {
@@ -77,6 +78,10 @@ export default function  NavbarSocial({ LightMode }) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const navgate = (link) => {
+    window.open(link, "_blank");
+  };
 
   return (
     <div className="w-full">
@@ -124,8 +129,10 @@ export default function  NavbarSocial({ LightMode }) {
               <Button
                 aria-label={content.texts.hero.ctaButtonAriaLabel}
                 label={content.texts.navbar.ctaButtonTextResponsive}
-                buttonLink={whatsappContactLink}
                 className={`${scrolling ? "" : ""}`}
+                onClick={() => {
+                  navgate("/contato");
+                }}
                 size="small"
                 icon={<FaWhatsapp />}
               />
