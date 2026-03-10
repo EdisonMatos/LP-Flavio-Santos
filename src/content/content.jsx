@@ -71,7 +71,7 @@ export const infos = {
   linkeDinProfile: "A_Definir",
   x: "A_Definir",
   whatsappDefaultMessage:
-    "Olá! Vim através do site de vocês e gostaria de tirar umas dúvidas.",
+    "Olá, gostaria de falar com um advogado, vim pelo site.",
   whatsChatDefaultMessage:
     "Gostaria de falar conosco agora mesmo? Clque abaixo 👇",
   slogan: "",
