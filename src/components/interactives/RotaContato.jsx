@@ -26,7 +26,7 @@ export default function RotaContato() {
           <div className="flex flex-col w-full max-w-xs gap-3 space-y-4">
             <Button
               aria-label="Botão de contato"
-              label="(14) 99769-0961 "
+              label="Fale agora mesmo"
               buttonLink={whatsappContactLink}
               animation
               className="w-[100%]"
